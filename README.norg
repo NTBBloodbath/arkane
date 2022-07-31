@@ -1,0 +1,11 @@
+@document.meta
+title: README
+description: 
+authors: 
+categories: 
+created: 2022-07-31
+version: 0.0.11
+@end
+
+* Arkane
+  Arkane is a text-based terminal RPG game made in Zig as my first project with the language.
