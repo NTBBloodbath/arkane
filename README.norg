@@ -9,3 +9,30 @@ version: 0.0.11
 
 * Arkane
   Arkane is a text-based terminal RPG game made in Zig as my first project with the language.
+
+** Building Arkane
+   To build arkane from source you will need to run the following commands:
+   @code bash
+   git clone --recurse-submodules https://github.com/NTBBloodbath/arkane.git
+   cd arkane
+   zig build -Drelease-safe
+   @end
+
+   > Produced binary will be at `zig-out/bin` directory.
+
+* Roadmap
+  - [ ] Set up Arkane directories -> {@ src/fs.zig}.
+  -- [ ] Create Arkane configuration files (optional?) -> {@ src/config.zig}.
+  -- [ ] Create Arkane state files (save files) -> {@ src/state.zig}.
+  - [ ] Create character classes and base statistics -> {@ src/character.zig}.
+  -- [ ] Create history for each character class -> {@ src/history.zig}.
+  - [ ] Create items (armours, swords, staff) -> {@ src/items.zig}.
+  - [ ] Create enemies (classes, stats, drops) -> {@ src/enemies.zig}.
+  -- [ ] Create combats logic (turn based) -> {@ src/combat.zig}.
+  - [ ] Create basic UI (life bars, menus, etc) ...
+  -- ... -> {@ src/ui/bars.zig}.
+  -- ... -> {@ src/ui/menu.zig}.
+  -- ... -> {@ src/ui/prompt.zig}.
+
+* License
+  Arkane is licensed under {@ LICENSE}[GPLv3] license.
