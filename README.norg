@@ -21,7 +21,8 @@ version: 0.0.11
    > Produced binary will be at `zig-out/bin` directory.
 
 * Roadmap
-  - [ ] Set up Arkane directories -> {@ src/fs.zig}.
+  - [-] Set up Arkane directories and files.
+  -- [x] Create Arkane directories -> {@ src/fs.zig}.
   -- [ ] Create Arkane configuration files (optional?) -> {@ src/config.zig}.
   -- [ ] Create Arkane state files (save files) -> {@ src/state.zig}.
   - [ ] Create character classes and base statistics -> {@ src/character.zig}.
@@ -29,10 +30,10 @@ version: 0.0.11
   - [ ] Create items (armours, swords, staff) -> {@ src/items.zig}.
   - [ ] Create enemies (classes, stats, drops) -> {@ src/enemies.zig}.
   -- [ ] Create combats logic (turn based) -> {@ src/combat.zig}.
-  - [ ] Create basic UI (life bars, menus, etc) ...
-  -- ... -> {@ src/ui/bars.zig}.
-  -- ... -> {@ src/ui/menu.zig}.
-  -- ... -> {@ src/ui/prompt.zig}.
+  - [-] Create basic UI (life bars, menus, etc) ...
+  -- [ ] ... -> {@ src/ui/bars.zig}.
+  -- [ ] ... -> {@ src/ui/menu.zig}.
+  -- [x] ... -> {@ src/ui/prompt.zig}.
 
 * License
   Arkane is licensed under {@ LICENSE}[GPLv3] license.
