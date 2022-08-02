@@ -25,8 +25,8 @@ version: 0.0.11
   -- [x] Create Arkane directories -> {@ src/fs.zig}.
   -- [ ] Create Arkane configuration files (optional?) -> {@ src/config.zig}.
   -- [ ] Create Arkane state files (save files) -> {@ src/state.zig}.
-  - [ ] Create character classes and base statistics -> {@ src/character.zig}.
-  -- [ ] Create history for each character class -> {@ src/history.zig}.
+  - [-] Create character classes and base statistics -> {@ src/character.zig}.
+  - [ ] Create history for each character class -> {@ src/history.zig}.
   - [ ] Create items (armours, swords, staff) -> {@ src/items.zig}.
   - [ ] Create enemies (classes, stats, drops) -> {@ src/enemies.zig}.
   -- [ ] Create combats logic (turn based) -> {@ src/combat.zig}.
