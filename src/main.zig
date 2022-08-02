@@ -22,6 +22,7 @@ pub fn main() anyerror!void {
     var gpa = std.heap.GeneralPurposeAllocator(.{}){};
     var arena = std.heap.ArenaAllocator.init(gpa.allocator());
     var allocator = arena.allocator();
+    defer _ = gpa.deinit();
 
     // Cmdline
     // ------------
