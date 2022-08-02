@@ -11,7 +11,9 @@ const std = @import("std");
 /// - `data`   : `[]u8`
 /// - `config` : `[]u8`
 pub const Path = struct {
+    /// Data directory
     data: []u8,
+    /// Configuration directory
     config: []u8,
 
     /// Initialize an immutable `fs.Path` structure instance and return it
@@ -83,10 +85,7 @@ pub fn init(allocator: std.mem.Allocator) !Path {
 }
 
 test "Correct Arkane paths" {
-    var arena = std.heap.ArenaAllocator.init(std.heap.page_allocator);
-    defer arena.deinit();
-
-    const allocator = arena.allocator();
+    const allocator = std.testing.allocator;
 
     // Crate a new `Path` struct instance and get its fields
     var path = try Path.init(allocator);
@@ -117,10 +116,7 @@ test "Correct Arkane paths" {
 }
 
 test "Create directories" {
-    var arena = std.heap.ArenaAllocator.init(std.heap.page_allocator);
-    defer arena.deinit();
-
-    const allocator = arena.allocator();
+    const allocator = std.testing.allocator;
 
     var path = try Path.init(allocator);
     defer path.deinit(allocator);
