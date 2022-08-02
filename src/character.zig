@@ -30,7 +30,7 @@ const std = @import("std");
 //                 - attack: 11
 //                 - defense: 10
 //                 - magic: 10
-pub const Class = struct {};
+pub const Class = enum {};
 pub const ClassStats = struct {};
 
 // TODO: Implement character statistics (Stats)
@@ -44,6 +44,28 @@ pub const ClassStats = struct {};
 //              - souls^      : std.StringHashMap(i32)
 //            *: Base statistic value comes from a Class field.
 //            ^: Has an additional explanation in another TODO.
+//
+// TODO: Implement character souls (Stats)
+//       Some notes on this:
+//         1. Souls makes the character stronger by increasing
+//            his statistics, unlike regular level up points in
+//            any other RPG, souls aren't consumable.
+//
+//         2. Souls have different kinds and each kind improves
+//            a different character statistic:
+//            ┌──────────┬────────────────────┐
+//            │ Kind     │ Improved statistic │
+//            ├──────────┼────────────────────┤
+//            │ Light    │ Health             │
+//            │ Darkness │ Defense            │
+//            │ Fire     │ Attack             │
+//            │ Air      │ Magic              │
+//            └──────────┴────────────────────┘
+//
+//         3. Souls can be obtained through the following ways:
+//              - Leveling up
+//              - Killing bosses
+//              - Completing certain missions
 pub const Stats = struct {};
 
 // TODO: Implement character experience (Experience)
