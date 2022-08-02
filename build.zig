@@ -1,5 +1,4 @@
 const std = @import("std");
-const zig_clap = @import("lib/zig-clap/build.zig");
 
 pub fn build(b: *std.build.Builder) void {
     // Standard target options allows the person running `zig build` to choose
