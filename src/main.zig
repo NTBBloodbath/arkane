@@ -10,7 +10,6 @@ const fs = @import("fs.zig");
 const prompt = @import("ui/prompt.zig");
 
 const version = "0.1.0a";
-const version_str = std.fmt.comptimePrint("Arkane v{s} by NTBBloodbath", .{version});
 
 pub fn main() anyerror!void {
     // Standard output/err
@@ -19,10 +18,8 @@ pub fn main() anyerror!void {
 
     // Create an arena allocator to reduce time spent allocating
     // and freeing memory during runtime.
-    var gpa = std.heap.GeneralPurposeAllocator(.{}){};
-    var arena = std.heap.ArenaAllocator.init(gpa.allocator());
+    var arena = std.heap.ArenaAllocator.init(std.heap.page_allocator);
     var allocator = arena.allocator();
-    defer _ = gpa.deinit();
 
     // Cmdline
     // ------------
@@ -46,7 +43,7 @@ pub fn main() anyerror!void {
         return clap.help(stdout, clap.Help, &params, .{});
     }
     if (res.args.version)
-        try stdout.print("{s}\n", .{version_str});
+        try stdout.print("Arkane v{s} by NTBBloodbath\n", .{version});
 
     // Main logic
     // ------------
