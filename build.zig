@@ -7,13 +7,16 @@ pub fn build(b: *std.Build) void {
     const target = b.standardTargetOptions(.{});
     const optimize = b.standardOptimizeOption(.{});
 
+    // Dependencies
+    const clap_mod = b.dependency("clap", .{ .target = target, .optimize = optimize }).module("clap");
+
     const exe = b.addExecutable(.{
         .name = "arkane",
         .root_source_file = .{ .path = "src/main.zig" },
         .target = target,
         .optimize = optimize,
     });
-    _ = b.dependency("clap", .{});
+    exe.addModule("clap", clap_mod);
     b.installArtifact(exe);
 
     const run_cmd = b.addRunArtifact(exe);
