@@ -9,7 +9,7 @@ const clap = @import("clap");
 const fs = @import("fs.zig");
 const prompt = @import("ui/prompt.zig");
 
-const version = "0.1.0a";
+const version = "0.1.0";
 
 pub fn main() anyerror!void {
     // Standard output/err
@@ -38,12 +38,12 @@ pub fn main() anyerror!void {
     };
     defer res.deinit();
 
-    if (res.args.help) {
+    if (res.args.help != 0) {
         try stdout.print("Usage: arkane [options]\n\nOptions:\n", .{});
         return clap.help(stdout, clap.Help, &params, .{});
     }
-    if (res.args.version)
-        try stdout.print("Arkane v{s} by NTBBloodbath\n", .{version});
+    if (res.args.version != 0)
+        try stdout.print("Arkane v{s} by NTBBloodbath <bloodbathalchemist@protonmail.com>\n", .{version});
 
     // Main logic
     // ------------
